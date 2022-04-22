@@ -1,5 +1,5 @@
-starting_num = int(input("Enter the starting number:"))
-desired_num = int(input("Enter the desired number:"))
+starting_num = int(input("Enter the starting number: "))
+desired_num = int(input("Enter the desired number: "))
 
 
 def is_even(n):
@@ -7,12 +7,12 @@ def is_even(n):
 
 
 def calc(starting_num, desired_num):
-    steps = 0
+    rounds = 0
     food = 0
     total = starting_num
     running = True
     while running:
-        steps += 1
+        rounds += 1
         old = total
         if is_even(total):
             total += total/2
@@ -23,9 +23,10 @@ def calc(starting_num, desired_num):
 
         if total >= desired_num:
             running = False
-            return steps, food
+            return rounds, food
 
 
-steps, food = calc(starting_num, desired_num)
-print("Number of steps:", steps)
+rounds, food = calc(starting_num, desired_num)
+print("\nNumber of rounds:", rounds)
 print("Amount of food:", int(food))
+print(f"Minimum amount of time required: {rounds * 5} minutes")
